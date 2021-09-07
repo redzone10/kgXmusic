@@ -164,10 +164,10 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip")
             ],
             [
-                InlineKeyboardButton("📖 Daftar putar", "playlist"),
+                InlineKeyboardButton("ᴘʟᴀʏʟɪsᴛ", "playlist"),
             ],
             [       
-                InlineKeyboardButton("🗑 Tutup", "cls")
+                InlineKeyboardButton("ᴛᴜᴛᴜᴘ", "cls")
             ]        
         ]
     )
@@ -374,11 +374,11 @@ async def m_cb(b, cb):
                 
                 ],
                 [
-                    InlineKeyboardButton("📖 Daftar putar", "playlist"),
+                    InlineKeyboardButton("ᴘʟᴀʏʟɪsᴛ", "playlist"),
                 
                 ],
                 [       
-                    InlineKeyboardButton("🗑 Tutup", "cls")
+                    InlineKeyboardButton("ᴛᴜᴛᴜᴘ", "cls")
                 ]        
             ]
         )
@@ -510,10 +510,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 Update", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("⚙️ Menu", callback_data="menu"),
+                    InlineKeyboardButton("ɢʀᴏᴜᴘ", url=f"https://t.me/KGSupportgroup"),
+                    InlineKeyboardButton("ᴍᴇɴᴜ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
             ]
         )
         file_name = get_file_name(audio)
@@ -547,7 +547,7 @@ async def play(_, message: Message):
             views = results[0]["views"]
         except Exception as e:
             await lel.edit(
-                "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play happier olivia rodrigo`"
+                "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play bukan lagu valentine`"
             )
             print(str(e))
             return
@@ -556,10 +556,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 Update", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("⚙️ Menu", callback_data="menu"),
+                    InlineKeyboardButton("ɢʀᴏᴜᴘ", url=f"https://t.me/KGSupportgroup"),
+                    InlineKeyboardButton("ᴍᴇɴᴜ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -598,7 +598,7 @@ async def play(_, message: Message):
                         InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}')
                     ],
-                    [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                    [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
                 ]
             )
             await lel.edit(toxxt,reply_markup=keyboard,disable_web_page_preview=True)
@@ -620,7 +620,7 @@ async def play(_, message: Message):
                 views = results[0]["views"]
             except Exception as e:
                 await lel.edit(
-                    "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play happier olivia rodrigo`"
+                    "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play bukan lagu valentine`"
                 )
                 print(str(e))
                 return
@@ -629,10 +629,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 Update", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("⚙️ Menu", callback_data="menu"),
+                    InlineKeyboardButton("ɢʀᴏᴜᴘ", url=f"https://t.me/KGSupportgroup"),
+                    InlineKeyboardButton("ᴍᴇɴᴜ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -649,8 +649,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Sedang memutar**`\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** `{duration}`\n" \
-                   +f"🎧 **Permintaan:** {message.from_user.mention} \n",
+            caption=f"**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**💡 sᴛᴀᴛᴜs:** Memutar\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}",
             reply_markup=keyboard
         )
     else:
@@ -669,8 +668,7 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Sedang memutar**\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** `{duration}`\n" \
-                   +f"🎧 **Permintaan:** {message.from_user.mention} \n",
+            caption=f"**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**💡 sᴛᴀᴛᴜs:** Memutar\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}",
             reply_markup=keyboard
         )
         os.remove("final.png")
@@ -731,10 +729,10 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 Update", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("⚙️ Menu", callback_data="menu"),
+                    InlineKeyboardButton("ɢʀᴏᴜᴘ", url=f"https://t.me/KGSupportgroup"),
+                    InlineKeyboardButton("ᴍᴇɴᴜ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
             ]
         )
     requested_by = useer_name
@@ -754,8 +752,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"💡 **Lagu ditambahkan di antrian** » `{position}`\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** {duration}\n" \
-                    + f"🎧 **Permintaan:** {r_by.mention} \n",
+            caption=f"**💡 Track added to the queue**\n\n**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}\n\n**🔢 ᴛʀᴀᴄᴋ ᴘᴏsɪᴛɪᴏɴ:** »`{position}`«",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -776,8 +773,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"💡 **Sedang memutar**\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** {duration}\n" \
-                    + f"🎧 **Permintaan:** {r_by.mention} \n",
+            caption=f"**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**💡 sᴛᴀᴛᴜs:** Memutar\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}",
                     reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -867,7 +863,7 @@ async def ytplay(_, message: Message):
 
     except Exception as e:
         await lel.edit(
-            "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play happier olivia rodrigo`"
+            "**❎ lagu tidak ditemukan**, mohon tulis judul dengan benar\n\n» **Contoh :** `/play bukan lagu valentine`"
         )
         print(str(e))
         return
@@ -876,10 +872,10 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💡 Update", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("⚙️ Menu", callback_data="menu"),
+                    InlineKeyboardButton("ɢʀᴏᴜᴘ", url=f"https://t.me/KGSupportgroup"),
+                    InlineKeyboardButton("ᴍᴇɴᴜ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
+                [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="cls")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -896,8 +892,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"💡 **Lagu ditambahkan di antrian** » `{position}`\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** {duration}\n" \
-                    + f"🎧 **Permintaan:** {r_by.mention} \n",
+            caption=f"**💡 Track added to the queue**\n\n**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}\n\n**🔢 ᴛʀᴀᴄᴋ ᴘᴏsɪᴛɪᴏɴ:** »`{position}`«",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -918,8 +913,7 @@ async def ytplay(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"💡 **Sedang memutar**\n\n🏷 **Judul:** [{title}]({url})\n⏱ **Durasi:** {duration}\n" \
-                    + f"🎧 **Permintaan:** {r_by.mention} \n",
+            caption=f"**🏷 ᴛɪᴛʟᴇ:** [{title[:25]}...]({url})\n**⏱️ ᴅᴜʀᴀᴛɪᴏɴ:** {duration}\n**💡 sᴛᴀᴛᴜs:** Memutar\n**🎧 ʀᴇϙᴜᴇsᴛ ʙʏ:** {r_by.mention}",
                     reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
